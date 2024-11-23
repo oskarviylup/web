@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="важные и ключевые слова">
+  <link rel="stylesheet" href="css/lab5Styles.css">
+  <title>Конструктор таблицы</title>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="table-generator.html">Конструктор таблицы</a>
+  </nav>
+</header>
+<main>
+  <h1>Конструктор таблицы</h1>
+  <form id="table-form">
+    <label>
+      Дни недели:
+      <select id="week-type" name="weekType">
+        <option value="5">5-дневная</option>
+        <option value="6">6-дневная</option>
+      </select>
+    </label>
+    <label>
+      Максимальное количество занятий:
+      <input type="number" id="max-lessons" name="maxLessons" min="1" max="10" value="6">
+    </label>
+    <label>
+      Язык:
+      <select id="language" name="language">
+        <option value="ru">Русский</option>
+        <option value="en">Английский</option>
+      </select>
+    </label>
+    <button type="submit">Сгенерировать таблицу</button>
+    <button type="button" id="save-settings">Сохранить настройки</button>
+    <button type="button" id="load-settings">Загрузить настройки</button>
+  </form>
+  <div id="table-container"></div>
+</main>
+<script src="js/lab5Script.js"></script>
+</body>
+</html>

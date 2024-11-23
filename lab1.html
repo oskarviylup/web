@@ -3,37 +3,74 @@
     <head>
         <meta charset="UTF-8">
         <meta name="keywords" content="важные и ключевые слова">
-        <link href="outline.css" rel="stylesheet">
+        <link href="css/outline.css" rel="stylesheet">
+        <script src="js/search_button.js"></script>
         <title>Krestore</title>
     </head>
     <body>
         <header>
-            <h1>Krestore</h1>
-            <nav>
-                <h2><strong>Навигация</strong> по страницам</h2>
-                <ol>
-                    <li>Одежда</li>
-                    <li>Аксессуары</li>
-                    <li>Ювелирка</li>
-                </ol>
-            </nav>
+            <div class="left-section">
+                <h3><a href="Catalogue.html">Catalogue</a></h3>
+                <h3 id="search-toggle"><a href="#Search">Search</a></h3>
+                <h3><a href="lab1.html"> Main Page</a></h3>
+            </div>
+            <h1 class="center-title">Krestore</h1>
+            <div class="right-section">
+                <h3>Cart</h3>
+            </div>
         </header>
+        <script src="js/activeMenu.js" defer></script>
+        <div id="search-container" class="hidden">
+            <input type="text" id="search-input" placeholder="Поиск...">
+        </div>
+        <img src="img/photo_2024-11-07_20-27-08.jpg" alt="Изображение после навигации" class="main-image">
+        <nav>
+            <h2><strong>Навигация</strong> по страницам</h2>
+            <ol>
+                <li>Одежда</li>
+                <li>Аксессуары</li>
+                <li>Ювелирка</li>
+            </ol>
+        </nav>
         <main>
-            <img src="/Users/oskarviylyp/WebstormProjects/itmoweb/web/img/scale_1200.jpeg" alt="Изображение после навигации" class="main-image">
-            <section>
-                <h3>Мужское</h3>
-                <p>Описание</p>
+            <section class="sales-section">
+                <h3>Sales</h3>
             </section>
-            <section>
-                <h3>Женское</h3>
-                <p>Описание</p>
+            <section class="newCloth-section">
+                <h3>New Cloth</h3>
             </section>
-            <article>
-                <h3>История создания бренда</h3>
-                <p>текст про создание бренда</p>
-            </article>
-
+            <section class="mansWear-section">
+                <h3>Men's</h3>
+            </section>
+            <section class = "womenWear-section">
+                <h3>Women's</h3>
+            </section>
+            <section class = "accessories-section">
+                <h3>Accessories</h3>
+            </section>
         </main>
+        <div class="table-container">
+            <div class="table-header">Имя</div>
+            <div class="table-header">Возраст</div>
+            <div class="table-header">Город</div>
+
+            <div class="table-row">Алексей</div>
+            <div class="table-row">25</div>
+            <div class="table-row">Москва</div>
+
+            <div class="table-row">Ольга</div>
+            <div class="table-row">30</div>
+            <div class="table-row">Санкт-Петербург</div>
+
+            <div class="table-row">Иван</div>
+            <div class="table-row">28</div>
+            <div class="table-row">Казань</div>
+
+            <div class="table-row">Мария</div>
+            <div class="table-row">22</div>
+            <div class="table-row">Новосибирск</div>
+        </div>
+
         <footer>
             <aside>
                 <h3>Помощь:</h3>
