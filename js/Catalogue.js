@@ -33,3 +33,20 @@
         }
     });
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+    const map = L.map('map').setView([59.945387, 30.360838], 15);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    const stores = [
+        { name: "Главный офис", coords: [59.945387, 30.360838], address: "Санкт-Петербург, Фурштатская улица, 40" }
+    ];
+
+    stores.forEach(store => {
+        const marker = L.marker(store.coords).addTo(map);
+        marker.bindPopup(`<b>${store.name}</b><br>${store.address}`);
+    });
+});

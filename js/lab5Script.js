@@ -1,16 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('table-form');
     const tableContainer = document.getElementById('table-container');
-    const saveSettingsButton = document.getElementById('save-settings');
-    const loadSettingsButton = document.getElementById('load-settings');
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const weekType = document.getElementById('week-type').value;
-        const maxLessons = document.getElementById('max-lessons').value;
-        const language = document.getElementById('language').value;
-
+    function generateTable({ weekType, maxLessons, language }) {
         const days = weekType === '5' ? ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница'] :
             ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
         const translations = {
@@ -21,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const table = document.createElement('table');
         table.classList.add('schedule-table');
 
+        // Генерация заголовков
         const headerRow = document.createElement('tr');
         const timeHeader = document.createElement('th');
         timeHeader.textContent = language === 'ru' ? 'Время' : 'Time';
@@ -51,27 +44,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         tableContainer.innerHTML = '';
         tableContainer.appendChild(table);
-    });
-
-    saveSettingsButton.addEventListener('click', () => {
-        const weekType = document.getElementById('week-type').value;
-        const maxLessons = document.getElementById('max-lessons').value;
-        const language = document.getElementById('language').value;
 
         localStorage.setItem('tableSettings', JSON.stringify({ weekType, maxLessons, language }));
-        alert('Настройки сохранены!');
+    }
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const weekType = e.target.weekType.value;
+        const maxLessons = e.target.maxLessons.value;
+        const language = e.target.language.value;
+
+        generateTable({ weekType, maxLessons, language });
     });
 
-    loadSettingsButton.addEventListener('click', () => {
-        const savedSettings = localStorage.getItem('tableSettings');
-        if (savedSettings) {
-            const { weekType, maxLessons, language } = JSON.parse(savedSettings);
-            document.getElementById('week-type').value = weekType;
-            document.getElementById('max-lessons').value = maxLessons;
-            document.getElementById('language').value = language;
-            alert('Настройки загружены!');
-        } else {
-            alert('Сохранённые настройки не найдены.');
-        }
-    });
+    const savedSettings = localStorage.getItem('tableSettings');
+    if (savedSettings) {
+        const { weekType, maxLessons, language } = JSON.parse(savedSettings);
+
+        generateTable({ weekType, maxLessons, language });
+    }
 });

@@ -5,8 +5,9 @@
     <meta name="keywords" content="важные и ключевые слова">
     <title>Каталог | KRESTORE</title>
     <link rel="stylesheet" href="css/catalogue.css">
-    <script src="js/Catalogue.js"></script>
-</head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    </head>
 <body>
 
 <header>
@@ -52,13 +53,19 @@
         <ul>
             <li>Phone Number:</li>
             <li>Email:</li>
-            <li>Adress:</li>
+            <li>Adress: Фурштатская улица, 40</li>
         </ul>
+    </section>
+
+    <section class="map-section">
+        <h3>Наши магазины</h3>
+        <div id="map" style="height: 400px;"></div>
     </section>
 </main>
 
 <footer>
     <p>&copy; 2024 KRESTORE</p>
 </footer>
+<script src="js/Catalogue.js"></script>
 </body>
 </html>

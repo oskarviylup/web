@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="keywords" content="важные и ключевые слова">
-        <link href="css/outline.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/outline.css">
         <script src="js/search_button.js"></script>
         <title>Krestore</title>
     </head>
@@ -21,7 +21,7 @@
         </header>
         <script src="js/activeMenu.js" defer></script>
         <div id="search-container" class="hidden">
-            <input type="text" id="search-input" placeholder="Поиск...">
+            <label for="search-input"></label><input type="text" id="search-input" placeholder="Поиск...">
         </div>
         <img src="img/photo_2024-11-07_20-27-08.jpg" alt="Изображение после навигации" class="main-image">
         <nav>
@@ -49,28 +49,19 @@
                 <h3>Accessories</h3>
             </section>
         </main>
-        <div class="table-container">
-            <div class="table-header">Имя</div>
-            <div class="table-header">Возраст</div>
-            <div class="table-header">Город</div>
 
-            <div class="table-row">Алексей</div>
-            <div class="table-row">25</div>
-            <div class="table-row">Москва</div>
+        <section class="reviews-section">
+            <h3>User Reviews</h3>
+            <div id="reviews-container"></div>
+            <div id="preloader" class="hidden">
+                <div class="spinner"></div>
+            </div>
+            <div id="error-message" class="hidden">⚠ Что-то пошло не так. Попробуйте снова.</div>
+        </section>
 
-            <div class="table-row">Ольга</div>
-            <div class="table-row">30</div>
-            <div class="table-row">Санкт-Петербург</div>
-
-            <div class="table-row">Иван</div>
-            <div class="table-row">28</div>
-            <div class="table-row">Казань</div>
-
-            <div class="table-row">Мария</div>
-            <div class="table-row">22</div>
-            <div class="table-row">Новосибирск</div>
-        </div>
-
+        <a href="lab5.html">Конструктор таблицы</a>
+        <script src="js/search_button.js"></script>
+        <script src="js/reviews.js" defer></script>
         <footer>
             <aside>
                 <h3>Помощь:</h3>

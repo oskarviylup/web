@@ -165,67 +165,51 @@ h1, h2, h3, p, li {
     text-align: center;
 }
 .mansWear-section {
-    background-image: url("img/manswear.jpg");
+    background-image: url("../img/manswear.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
 }
 .womenWear-section {
-    background-image: url("img/womanwear.jpg");
+    background-image: url("../img/manswear.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
 }
 .accessories-section {
-    background-image: url("img/acsess.jpg.webp");
+    background-image: url("../img/acsess.jpg.webp");
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
 }
 @font-face {
     font-family: 'CustomFont';
-    src: url('fonts/BodoniModa-VariableFont_opsz,wght.ttf') format('truetype');
+    src: url('../fonts/BodoniModa-VariableFont_opsz,wght.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
-
-.table-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 100%;
-    margin: 20px auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
+.hidden {
+    display: none;
 }
 
-.table-header {
-    background-color: #2980b9;
-    color: white;
-    font-weight: bold;
-    padding: 15px;
+.spinner {
+    margin: 10px auto;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+#error-message {
+    color: red;
+    font-size: 14px;
     text-align: center;
-}
-
-.table-row {
-    padding: 15px;
-    text-align: center;
-    border-top: 1px solid #000000;
-    border-right: 1px solid #000000;
-    border-left: 1px solid #000000;
-}
-
-
-.table-row:nth-child(6n+4),
-.table-row:nth-child(6n+5),
-.table-row:nth-child(6n+6) {
-    background-color: #a0c9ff;
-}
-
-.table-row:nth-child(6n+1),
-.table-row:nth-child(6n+2),
-.table-row:nth-child(6n+3) {
-    background-color: white;
+    margin-top: 10px;
 }
 
 
